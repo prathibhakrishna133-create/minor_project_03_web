@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Search current weather by city.">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="weather.css">
+  <script src="weather.js" defer></script>
+</head>
+<body class="weather-page">
+  <header class="topbar"><a class="brand" href="../index.html">← API Projects</a><span>WEATHER</span></header>
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">LIVE WEATHER</p>
+      <h1>Weather, <span>where you are.</span></h1>
+      <p class="subheading">Search any city to see its current weather conditions.</p>
+      <form id="weather-form" class="search-form">
+        <label class="sr-only" for="city-input">City name</label>
+        <input id="city-input" name="city" type="search" placeholder="Try Bengaluru, London, Tokyo..." autocomplete="off" required>
+        <button type="submit" id="search-button">Search</button>
+      </form>
+      <p id="weather-status" class="status" role="status" aria-live="polite">Enter a city to get started.</p>
+    </section>
+    <section id="weather-result" class="weather-result" hidden aria-live="polite">
+      <div class="weather-main">
+        <div><p id="location-name" class="location-name"></p><p id="local-time" class="local-time"></p></div>
+        <div class="condition-block"><span id="weather-icon" class="weather-icon" aria-hidden="true">☀️</span><div><strong id="temperature" class="temperature"></strong><p id="condition" class="condition"></p></div></div>
+      </div>
+      <div class="details-grid">
+        <article class="detail-card"><span class="detail-icon">💧</span><p>Humidity</p><strong id="humidity">--</strong></article>
+        <article class="detail-card"><span class="detail-icon">💨</span><p>Wind speed</p><strong id="wind">--</strong></article>
+        <article class="detail-card"><span class="detail-icon">🌡️</span><p>Feels-like</p><strong id="feels-like">--</strong></article>
+      </div>
+      <p class="source-note">Weather data: Open-Meteo public API</p>
+    </section>
+  </main>
+  <footer class="site-footer">Weather App · HTML, CSS, JavaScript ES6+</footer>
+</body>
+</html>
